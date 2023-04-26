@@ -107,10 +107,10 @@ main {
     margin-bottom: 1rem;
 
 }
-.task .content {
+#tasks .task .content {
     flex: 1 1 0%;
 }
-.task .content .text {
+#tasks .task .content .text {
     color: var(--light);
     font-size: 1.125rem;
     width: 100%;
@@ -118,7 +118,7 @@ main {
     transform: 0.4s;
 }
 
-.tasks .content .text:not(:read-only) {
+#tasks .tasks .content .text:not(:read-only) {
     color: var(--pink);
 }
 
