@@ -152,3 +152,31 @@ main {
 .task .actions .delete {
     color: crimson;
 } 
+.text {
+    margin-top: 10px;
+}
+.check {
+    margin: 10px;
+    height: 28px;
+    width: 28px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    background-image: url(images/unchecked-icon.png);
+}
+.checked {
+    margin: 10px;
+    height: 28px;
+    width: 28px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    background-image: url(images/checked-icon.png);
+}
+.strike{
+    text-decoration: line-through;
+}

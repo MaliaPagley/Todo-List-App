@@ -9,7 +9,9 @@ window.addEventListener('load', () => { // (<) On load all the code inside this 
     e.preventDefault();
 
     const task = input.value; // (<) task is equal to whatever text is type inside the forms input.
-    
+
+  
+
     if (!task) {
         alert('Please fill out the task')
         return;
@@ -18,24 +20,36 @@ window.addEventListener('load', () => { // (<) On load all the code inside this 
     const task_el = document.createElement("div"); 
     task_el.classList.add("task");
     //18-19 (^) When submitted creates a div: with class "task"
-   
+
+    const check_el = document.createElement("div") // (<) Creates a div for checking off
+    check_el.classList.add("check") // (<) add div to class
+    task_el.appendChild(check_el)
+
+    task_el.addEventListener('click', () => {
+        check_el.classList.add("checked")
+        strike()
+    })
+
     const task_content_el = document.createElement("div");
     task_content_el.classList.add("content");
     //22-23 (^) When submitted creates a div: with class "content"
 
     task_el.appendChild(task_content_el)
     //26 (^) Adds the div with class "task"(task_el) and puts the div with class "content" (task_content_el) inside it.
-     
-   
+
     const task_input_el = document.createElement("input") // (<) Creates an input element.
     task_input_el.classList.add("text") // (<) Adds the "text" class to input element.
     task_input_el.classList.type = "text" // (<) Sets the type of value input to "text".
     task_input_el.value = task; // (<) Sets the value to task.
     task_input_el.setAttribute("readonly", "readonly"); // (<) Sets an attribute of readonly to task (CANNOT BE MOTIFIED)
 
+    function strike() {
+        task_input_el.classList.add('strike')
+    }
+
     task_content_el.appendChild(task_input_el)
      //36 (^)  Adds the input with class "text" inside the div with the class "content"
-     
+ 
     const task_actions_el = document.createElement("div");
     task_actions_el.classList.add("actions");
     //39-40 (^) Creates a div with a class "actions"
