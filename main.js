@@ -25,10 +25,16 @@ window.addEventListener('load', () => { // (<) On load all the code inside this 
     check_el.classList.add("check") // (<) add div to class
     task_el.appendChild(check_el)
 
-    task_el.addEventListener('click', () => {
-        check_el.classList.add("checked")
-        strike()
+    task_el.addEventListener('click', () => {   
+        if (check_el.classList.contains("checked")) {
+            check_el.classList.remove("checked")
+            strike()
+        } else {
+            check_el.classList.add("checked")
+            strike()
+        }
     })
+   
 
     const task_content_el = document.createElement("div");
     task_content_el.classList.add("content");
@@ -44,7 +50,12 @@ window.addEventListener('load', () => { // (<) On load all the code inside this 
     task_input_el.setAttribute("readonly", "readonly"); // (<) Sets an attribute of readonly to task (CANNOT BE MOTIFIED)
 
     function strike() {
-        task_input_el.classList.add('strike')
+        if (task_input_el.classList.contains("strike")) {
+            task_input_el.classList.remove("strike")
+        } else {
+            task_input_el.classList.add('strike')
+        }
+       
     }
 
     task_content_el.appendChild(task_input_el)
