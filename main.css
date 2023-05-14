@@ -186,8 +186,7 @@ main {
     visibility: hidden; 
     width: 100%;
     max-width: 450px;
-    background: #f8ffff;
-    border: 1px solid #bedfe6;
+    background: var(--gray);
     border-radius: 5px;
     padding: 20px;
 
